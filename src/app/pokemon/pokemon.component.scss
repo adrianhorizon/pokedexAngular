@@ -1,0 +1,42 @@
+@import '../../../src/sass/variables';
+
+.pokemon-view {
+
+  .container-input {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    border-radius: 10px;
+    width: 50%;
+
+    input {
+      border-radius: 10px;
+      color: $colorGreen;
+      border: solid 2px $colorGreen;
+      font-size: 14px;
+      padding: 10px 15px;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .grid {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
+  }
+
+  .grid>* {
+    padding: 10px;
+    text-align: center;
+    background-color: steelblue;
+  }
+}

@@ -1,0 +1,12 @@
+<div class="pokemon-view">
+  <div class="container-input">
+    <input type="text" placeholder="buscar pokemon" [(ngModel)]="query">
+  </div>
+  <div class="grid" *ngIf="pokemons">
+    <ng-container *ngFor="let pokemon of pokemons.results | search: query">
+      <div [routerLink]="['/detail', pokemon.name]">
+        <h1>{{ pokemon.name }}</h1>
+      </div>
+    </ng-container>
+  </div>
+</div>
