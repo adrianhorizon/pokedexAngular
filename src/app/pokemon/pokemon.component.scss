@@ -1,20 +1,25 @@
 @import '../../../src/sass/variables';
+@import '../../../src/sass/mixins';
 
 .pokemon-view {
+  background-color: #fdcd3b;
+  background-image: -webkit-linear-gradient(150deg, #fdcd3b 30%, #ffed4b 30%);
+  min-height: 100vh;
 
   .container-input {
     margin: 0 auto;
     text-align: center;
-    margin-top: 24px;
-    margin-bottom: 24px;
     border-radius: 10px;
     width: 50%;
 
     input {
+      margin-top: 24px;
+      margin-bottom: 24px;
       border-radius: 10px;
-      color: $colorGreen;
-      border: solid 2px $colorGreen;
+      color: $colorFont;
+      border: solid 2px $colorSec;
       font-size: 14px;
+      font-weight: 500;
       padding: 10px 15px;
 
       &:focus {
@@ -23,20 +28,37 @@
 
       &::placeholder {
         opacity: 0.5;
+        font-weight: 400;
       }
     }
   }
 
   .grid {
-    min-height: 100vh;
+    max-width: 100%;
+    margin: 0 auto;
+    width: 95%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 10px;
+    grid-auto-rows: 120px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 15px;
   }
 
-  .grid>* {
-    padding: 10px;
+  .column {
     text-align: center;
-    background-color: steelblue;
+    background-color: white;
+    color: $colorFont;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+    box-shadow: 0px 6px 10px 1px rgba(36, 37, 38, 0.08);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
+
 }

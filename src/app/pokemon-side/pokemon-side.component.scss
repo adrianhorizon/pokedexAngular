@@ -1,0 +1,77 @@
+@import '../../../src/sass/variables';
+@import '../../../src/sass/mixins';
+
+.pokemon-view {
+
+  @media screen and (max-width: $layout-xs) and (orientation: landscape) {
+
+    .columns .column {
+      flex-basis: 100%;
+      margin: 0 0 5px 0;
+    }
+  }
+
+  @media screen and (max-width: $layout-sm) {
+    .columns .column {
+      margin-bottom: 5px;
+      flex-basis: 40%;
+
+      &:nth-last-child(2) {
+        margin-right: 0;
+      }
+
+      &:last-child {
+        flex-basis: 100%;
+        margin: 0;
+      }
+    }
+  }
+
+  .columns {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 15px 5px;
+  }
+
+  .column {
+    flex: 1;
+    margin: 5px;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: $colorGreen;
+    transition: all .2s ease-in-out;
+    color: white;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+  }
+
+  .container-pokemon {
+    @include container-div-shadow;
+    min-height: 100vh;
+  }
+
+  .pokemon-title {
+    color: $colorFont;
+    font-weight: 500;
+  }
+
+  .image-pokemon {}
+
+  .container-type {}
+
+  .container-abilities {}
+
+  .container-stats {}
+}

@@ -1,0 +1,18 @@
+@import '/../../../src/sass/variables';
+@import '/../../../src/sass/mixins';
+
+.side-bar-view {
+  .container-div {
+    @include container-div-shadow;
+    min-height: 60vh;
+  }
+
+  .container-item {
+    line-height: 20px;
+    
+    &:last-child{
+        margin-bottom: 24px;
+    }
+  }
+
+}

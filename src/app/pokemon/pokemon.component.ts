@@ -1,29 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonService } from '../shared/service/pokemon.service';
-import { Pokemon } from '../shared/models/pokemon';
-
+import { pokemonClass } from '../shared/AbstractClass/pokemonAbstract';
 @Component({
-  selector: 'app-pokemon',
+  selector: 'pokemon',
   templateUrl: './pokemon.component.html',
   styleUrls: ['./pokemon.component.scss']
 })
-export class PokemonComponent implements OnInit {
-  pokemons: Pokemon[];
+export class PokemonComponent extends pokemonClass implements OnInit {
   query: string;
-
-  constructor(private pokemonService: PokemonService) { }
-
-  ngOnInit() {
-    this.getPokemons()
-  }
-
-  getPokemons() {
-    this.pokemonService
-    .getPokemon()
-    .subscribe(
-      (data: Pokemon[]) => {
-        this.pokemons = data
-      }
-    );
-  }
+    
+    ngOnInit() {
+      this.getPokemons()
+    }
 }

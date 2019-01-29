@@ -1,0 +1,32 @@
+@import '../../../src/sass/variables';
+@import '../../../src/sass/mixins';
+
+.pokemon-top-bar {
+
+  .menu-container {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fdcd3b;
+    background-image: -webkit-linear-gradient(150deg, #fdcd3b 10%, #ffed4b 10%);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 9;
+  }
+
+  .menu-li {
+    float: left;
+  }
+
+  .menu-li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+    &:hover {
+      color: $colorButtonBlue;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@mixin container-div-shadow {
+    border-radius: 16px;
+    box-shadow: 0px 6px 15px 6px rgba(36, 37, 38, 0.08);
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin add-icon-style {
+    position: fixed;
+    padding: 0px 0px 5px 5px;
+    color: $colorGreen;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+  }

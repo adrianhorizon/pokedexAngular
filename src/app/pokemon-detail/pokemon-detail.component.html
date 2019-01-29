@@ -1,36 +1,13 @@
-<div *ngIf="pokemon" class="pokemon-view">
-  <div class="container-pokemon">
-    <h1 class="pokemon-title">{{ pokemon.name | titlecase }}
-      <span>N.º {{pokemon.id}}</span>
-    </h1>
-    <div class="image-pokemon">
-      <img width="100" [src]="pokemon.sprites.front_default">
+<div class="pokemon-view">
+  <div class="section group">
+    <div class="col span_1_of_2">
+      <pokemon-side></pokemon-side>
     </div>
-    <div class="container-height">
-      <h4>Height</h4>
-      <span>{{ pokemon.height }}</span>
-      <h4>Weight</h4>
-      <span>{{ pokemon.weight }}</span>
-    </div>
-    <div class="columns">
-      <div class="column container-type">
-        <h1>Type</h1>
-        <div *ngFor="let item of pokemon.types">
-          {{ item.type.name }}
-        </div>
-      </div>
-      <div class="column container-abilities">
-        <h1>Abilities</h1>
-        <div *ngFor="let item of pokemon.abilities">
-          {{ item.ability.name }}
-        </div>
-      </div>
-      <div class="column container-stats">
-        <h1>Stats</h1>
-        <div *ngFor="let poke of pokemon.stats">
-          {{ poke.base_stat }} {{ poke.stat.name }}
-        </div>
-      </div>
+    <div class="col span_1_of_2">
+      <pokemon-side-bar></pokemon-side-bar>
     </div>
   </div>
+  <a [routerLink]="['/']" class="add-detail">
+    <i class="fas fa-chevron-circle-left fa-4x"></i>
+  </a>
 </div>
