@@ -1,5 +1,4 @@
-@import '/../../../src/sass/variables';
-@import '/../../../src/sass/mixins';
+@import '../../sass/variables', '../../sass/mixins';
 
 .side-bar-view {
   color: $colorFont;
@@ -9,13 +8,13 @@
     min-height: 60vh;
     align-items: flex-start;
   }
-  
+
   h1 {
     margin: 24px auto;
   }
 
   .container-title {
-      font-weight: 400;
+    font-weight: 400;
   }
 
   .container-item {
@@ -26,6 +25,4 @@
       margin-bottom: 24px;
     }
   }
-
-
 }

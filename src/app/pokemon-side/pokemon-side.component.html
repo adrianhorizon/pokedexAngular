@@ -1,39 +1,43 @@
 <div *ngIf="pokemon" class="pokemon-view">
   <div class="container-pokemon">
-    <h1 class="pokemon-title">{{ pokemon.name | titlecase }}
-      <span>N.º {{pokemon.id}}</span>
-    </h1>
-    <div>
-      <img width="100" [src]="pokemon.sprites.front_default">
+    <div class="contaier-title-pokemon">
+      <h1 class="pokemon-title">{{ pokemon?.name | titlecase }}
+        <span>{{ (pokemon?.id > 10 ? '#0' : '#00' ) + pokemon?.id }}</span>
+      </h1>
+      <div>
+        <img width="100" [src]="pokemon.sprites.front_default">
+        <img width="100" [src]="pokemon.sprites.back_default">
+      </div>
     </div>
     <div class="columns">
       <div class="column">
         <h1 class="title-style-h1">Characteristics</h1>
         <p>Height:<br>
-          <span>{{ pokemon.height }} Ft</span>
+          <span>{{ pokemon?.height }} Ft</span>
         </p>
         <p>Weight:<br>
-          <span>{{ pokemon.weight }} Lbs</span>
+          <span>{{ pokemon?.weight }} Lbs</span>
         </p>
       </div>
       <div class="column">
         <h1 class="title-style-h1">Type</h1>
-        <div *ngFor="let item of pokemon.types" class="container-item-type">
-          {{ item.type.name }}
+        <div *ngFor="let item of pokemon?.types" class="container-item-type">
+          {{ item.type?.name }}
         </div>
       </div>
       <div class="column">
         <h1 class="title-style-h1">Abilities</h1>
-        <div *ngFor="let item of pokemon.abilities" class="container-abilities">
-          {{ item.ability.name }}
+        <div *ngFor="let item of pokemon?.abilities" class="container-abilities">
+          {{ item.ability?.name }}
         </div>
       </div>
       <div class="column">
         <h1 class="title-style-h1">Stats</h1>
-        <div *ngFor="let poke of pokemon.stats" class="container-stats">
+        <div *ngFor="let poke of pokemon?.stats" class="container-stats">
           <ul>
             <li>
-              {{ poke.base_stat }} : {{ poke.stat.name }}
+              {{ poke?.stat?.name }}
+              <progress max="100" [value]="poke?.base_stat"></progress>
             </li>
           </ul>
         </div>

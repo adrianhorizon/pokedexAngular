@@ -1,12 +1,15 @@
-<pokemon-top-bar></pokemon-top-bar>
-
 <div class="pokemon-view">
   <div class="container-input">
     <input type="text" placeholder="buscar pokemon" [(ngModel)]="query">
   </div>
-  <div class="grid" *ngIf="pokemons">
-    <div class="column" *ngFor="let pokemon of pokemons.results | search: query" [routerLink]="['/detail', pokemon.name]">
-      <p>{{ pokemon.name }}</p>
+  <div class="grid" *ngIf="pokemon">
+    <div class="column" *ngFor="let item of pokemon | search: query" [routerLink]="['/detail', item?.name]">
+      <p>{{ (item?.id > 10 ? '#0' : '#00' ) + item?.id }} - {{ item?.name }}</p>
+      <img [src]="item?.imageFront" />
+      <img [src]="item?.imageBack" />
     </div>
+  </div>
+  <div class="container-button">
+    <button class="button-style" (click)="onSubmit()">Load More</button>
   </div>
 </div>

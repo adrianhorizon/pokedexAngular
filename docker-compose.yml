@@ -1,0 +1,10 @@
+version: '3.1'
+
+services:
+    app:
+        image: 'pokedexangular'
+        build: '.'
+        ports:
+            - 3000:80
+        environment:
+          NODE_ENV: production

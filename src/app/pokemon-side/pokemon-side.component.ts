@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Pokemon } from '../shared/models/pokemon';
 
 @Component({
@@ -6,11 +6,8 @@ import { Pokemon } from '../shared/models/pokemon';
   templateUrl: './pokemon-side.component.html',
   styleUrls: ['./pokemon-side.component.scss']
 })
-export class PokemonSideComponent implements OnInit {
-  
-  @Input("pokemon") pokemon: Pokemon;
+export class PokemonSideComponent {
 
-  ngOnInit() {
-  }
+  @Input('pokemon') pokemon: Pokemon;
 
 }
