@@ -31,17 +31,18 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    margin: 15px 5px;
+    margin: 15px 10px;
   }
 
   .column {
+    box-shadow: 0px 6px 15px 0px rgba(40, 80, 121, 0.25);
+    height: auto;
     flex: 1;
     margin: 5px;
-    padding: 40px;
+    padding: 24px 30px;
     border-radius: 10px;
-    background-color: $colorGreen;
     transition: all .2s ease-in-out;
-    color: white;
+    color: $colorFont;
 
     &:first-child {
       margin-left: 0;
@@ -52,9 +53,28 @@
     }
 
     &:hover {
-      transform: scale(1.1);
+      transform: scale(0.9);
     }
 
+  }
+
+  .title-style-h1 {
+      font-weight: 400;
+      font-size: 26px;
+  }
+
+  .container-item-type {
+    margin-bottom: 8px;
+    color: white;
+    border-radius: 10px;
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+    -webkit-animation-name: Animation;
+    animation: Animation infinite;
+    -webkit-animation-duration: 12s;
+    animation-name: Animation;
+    animation-duration: 12s;
   }
 
   .container-pokemon {
@@ -67,11 +87,32 @@
     font-weight: 500;
   }
 
-  .image-pokemon {}
-
-  .container-type {}
-
-  .container-abilities {}
+  .container-abilities {
+    margin-bottom: 8px;
+    color: white;
+    background-color: $salmon;
+    border-radius: 10px;
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+  }
 
   .container-stats {}
+
+
+  @keyframes Animation {
+    0% { background: $colorSec; }
+    25% { background: $colorButtonGreen; }
+    50% { background: $colorInstagram; }
+    75% { background: $blueWarn; }
+    100% { background: $colorSec; }
+  }
+
+  @-webkit-keyframes Animation {
+    0% { background: $colorSec; }
+    25% { background: $colorButtonGreen; }
+    50% { background: $colorInstagram; }
+    75% { background: $blueWarn; }
+    100% { background: $colorSec; }
+  }
 }

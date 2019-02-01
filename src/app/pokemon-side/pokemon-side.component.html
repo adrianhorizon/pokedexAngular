@@ -3,11 +3,12 @@
     <h1 class="pokemon-title">{{ pokemon.name | titlecase }}
       <span>N.º {{pokemon.id}}</span>
     </h1>
-    <div class="image-pokemon">
+    <div>
       <img width="100" [src]="pokemon.sprites.front_default">
     </div>
     <div class="columns">
-      <div class="column container-height">
+      <div class="column">
+        <h1 class="title-style-h1">Characteristics</h1>
         <p>Height:<br>
           <span>{{ pokemon.height }} Ft</span>
         </p>
@@ -15,22 +16,26 @@
           <span>{{ pokemon.weight }} Lbs</span>
         </p>
       </div>
-      <div class="column container-type">
-        <h1>Type</h1>
-        <div *ngFor="let item of pokemon.types">
+      <div class="column">
+        <h1 class="title-style-h1">Type</h1>
+        <div *ngFor="let item of pokemon.types" class="container-item-type">
           {{ item.type.name }}
         </div>
       </div>
-      <div class="column container-abilities">
-        <h1>Abilities</h1>
-        <div *ngFor="let item of pokemon.abilities">
+      <div class="column">
+        <h1 class="title-style-h1">Abilities</h1>
+        <div *ngFor="let item of pokemon.abilities" class="container-abilities">
           {{ item.ability.name }}
         </div>
       </div>
-      <div class="column container-stats">
-        <h1>Stats</h1>
-        <div *ngFor="let poke of pokemon.stats">
-          {{ poke.base_stat }} {{ poke.stat.name }}
+      <div class="column">
+        <h1 class="title-style-h1">Stats</h1>
+        <div *ngFor="let poke of pokemon.stats" class="container-stats">
+          <ul>
+            <li>
+              {{ poke.base_stat }} : {{ poke.stat.name }}
+            </li>
+          </ul>
         </div>
       </div>
     </div>

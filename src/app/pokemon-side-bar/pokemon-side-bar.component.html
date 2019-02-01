@@ -1,8 +1,10 @@
 <div class="side-bar-view" *ngIf="pokemon">
   <div class="container-div">
-    <h1>Moves</h1>
+    <h1 class="container-title">Moves</h1>
     <div *ngFor="let item of pokemon.moves | slice:0:20" class="container-item">
-      <small>{{ item.move.name }}</small>
+      <ul>
+        <li>{{ item.move.name }}</li>
+      </ul>
     </div>
   </div>
 </div>

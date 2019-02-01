@@ -23,7 +23,7 @@ export class PokemonService {
      );
    }
 
-   getPokemonId(id: string): Observable<PokemonId> {
+   getPokemonId(id): Observable<PokemonId> {
     return this.http.get<PokemonId>(`${this.pokeApi}/${id}`)
     .pipe(
       catchError(this.handleError)

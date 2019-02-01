@@ -17,6 +17,31 @@
     }
   }
 
+  .container-form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+
+    .style-input{
+        padding: 10px 25px;
+        border: 2px solid $colorGreen;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 400;
+        color: $colorGreen;
+        width: 220px;
+
+        &:focus {
+            outline: none;
+        }
+        &::placeholder {
+            opacity: 0.5;
+            font-weight: 200;
+        }
+    }
+  }
+
   .section {
     clear: both;
     margin: 0px;

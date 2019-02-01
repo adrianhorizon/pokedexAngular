@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export abstract class pokemonClass {
+export class pokemonClass {
     pokemons: Pokemon[];
     pokemon: PokemonId;
     sub: any;
@@ -18,29 +18,35 @@ export abstract class pokemonClass {
       ) { }
 
     getPokemons() {
-        this.pokemonService
-        .getPokemon()
-        .subscribe(
-          (data: Pokemon[]) => {
-            this.pokemons = data
-            console.log(data)
-          }
-        );
+      this.pokemonService
+      .getPokemon()
+      .subscribe(
+        (data: Pokemon[]) => this.pokemons = data
+      );
     }
 
-    showPokemon() {
-    }
-    
     getPokemonId() {
       this.sub = this.route.params.subscribe(params => { 
         this.pokemonService
         .getPokemonId(params.id)
         .subscribe(
-          (data: PokemonId) => {
-            this.pokemon = data
-            console.log(data)
-          }
+          (data: PokemonId) => this.pokemon = data
         );
       });
+    }
+
+    showPokemon(id) {
+      this.pokemonService
+      .getPokemonId(id)
+        .subscribe(
+          (data: PokemonId) => this.pokemon = data
+        );
+    }
+  
+    submitPokemon(event) {
+      event.preventDefault()
+      const form = new FormData(event.target)
+      const id = form.get('id')
+      this.showPokemon(id)
     }
 }

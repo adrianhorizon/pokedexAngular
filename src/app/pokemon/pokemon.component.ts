@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { pokemonClass } from '../shared/AbstractClass/pokemonAbstract';
+import { Component, OnInit, Input } from '@angular/core';
+import { pokemonClass } from '../shared/AbstractClass/pokemonClass';
+import { Pokemon } from '../shared/models/pokemon';
+import { PokemonId } from '../shared/models/pokemonId';
 @Component({
   selector: 'pokemon',
   templateUrl: './pokemon.component.html',

@@ -2,17 +2,30 @@
 @import '/../../../src/sass/mixins';
 
 .side-bar-view {
+  color: $colorFont;
+
   .container-div {
     @include container-div-shadow;
     min-height: 60vh;
+    align-items: flex-start;
+  }
+  
+  h1 {
+    margin: 24px auto;
+  }
+
+  .container-title {
+      font-weight: 400;
   }
 
   .container-item {
     line-height: 20px;
-    
-    &:last-child{
-        margin-bottom: 24px;
+    height: 24px;
+
+    &:last-child {
+      margin-bottom: 24px;
     }
   }
+
 
 }
